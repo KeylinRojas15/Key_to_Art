@@ -35,7 +35,7 @@ body {
 
 .nav {
   position: relative;
-  background-color: #fff;         /* 👈 franja blanca detrás de los enlaces */
+  background-color: #fff;      
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -65,6 +65,41 @@ body {
 .nav a:hover {
   color: #b34b3c;
 }
+
+/* RESPONSIVE HEADER */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+  }
+
+  .nav a {
+    display: inline-block;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .nav {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+}
+
 
 /* FILTROS */
 .filtros {

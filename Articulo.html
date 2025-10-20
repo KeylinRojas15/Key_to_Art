@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key to Art - Artículo</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1 class="logo">Key to Art</h1>
+    <nav class="nav">
+      <a href="index.html" class="link">Inicio</a>
+      <a href="#nosotros" class="link">Nosotros</a>
+      <a href="#blogs" class="link active">Blogs</a>
+      <a href="Contacto.html" class="link">Contacto</a>
+      <a href="#preguntas" class="link">Preguntas Frecuentes</a>
+      <a href="AcercaDe.html" class="link">Acerca de</a>
+    </nav>
+  </header>
+
+  <main class="contenido-articulo">
+    <div class="articulo-detalle">
+      <div class="video-articulo"></div>
+      <img src="" alt="Imagen del artículo" class="imagen-articulo">
+      <div class="texto-articulo">
+        <h2 class="titulo-articulo"></h2>
+        <p></p>
+        <a href="Blog.html" class="btn-volver">← Volver al Blog</a>
+      </div>
+    </div>
+
+    <section class="comentarios">
+      <h3>Comentarios</h3>
+      <div class="comentario">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="usuario" class="avatar">
+        <div>
+          <span class="usuario">Usuario</span>
+          <span class="fecha">Hace 2 días</span>
+          <p>Excelente contenido, me gusto los tips y datos bien explicados.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="deja-comentario">
+      <h3>Deja un comentario</h3>
+      <form class="form-comentario">
+        <div class="fila">
+          <input type="text" placeholder="Nombre" required>
+          <input type="email" placeholder="Correo electrónico" required>
+        </div>
+        <textarea placeholder="Comentario" required></textarea>
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="columna">
+      <p>m felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+        fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+    </div>
+    <div class="columna centro">
+      <h3>¡Contáctame!</h3>
+      <div class="iconos">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="WhatsApp"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+      </div>
+    </div>
+    <div class="columna">
+      <p>m felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+        fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+    </div>
+  </footer>
+
+  <script>
+    const articulos = [
+      { id: 1, titulo: "Personaliza tu carcasa con estilo: paso a paso", 
+      video: "https://youtube.com/embed/1VoIVsLbdk8?si=8kQX4aAlh6s0sTy8", contenido: `
+      Las carcasas pintadas a mano son una forma increíble de expresar tu personalidad. Si quieres aprender a crear diseños únicos y duraderos, este tutorial es para ti.<br><br>
+      <strong>Preparación de la carcasa:</strong> Limpia la superficie con alcohol para eliminar grasa y polvo. Si es muy lisa, lija suavemente para mejorar la adherencia.<br>
+      <strong>Elección de materiales:</strong> Usa pinturas acrílicas resistentes y pinceles finos para detalles. También puedes usar marcadores permanentes para líneas precisas.<br>
+      <strong>Diseño y boceto:</strong> Haz un boceto en papel antes de pintar. Decide si quieres un diseño minimalista, floral o abstracto.<br>
+      <strong>Aplicación de la pintura:</strong> Aplica capas finas y deja secar entre cada una. Si quieres un acabado profesional, usa un pincel angular para bordes.<br>
+      <strong>Sellado:</strong> Protege tu diseño con barniz transparente en spray. Esto evitará que la pintura se desgaste con el uso.<br><br>
+      Con estos pasos, tu carcasa será única y reflejará tu estilo. ¡Atrévete a crear y comparte tu arte! 
+      `},
+      
+      { id: 2, titulo:  "Cuadros minimalistas: guía para principiantes", 
+      video: "https://youtube.com/embed/gFzRXcYj-X8?si=f6FgKOPRTX5q0Kjj", contenido: `
+      El minimalismo es tendencia en decoración. Si quieres crear cuadros elegantes y modernos, sigue esta guía.<br><br>
+      <strong>Elige la paleta de colores:</strong> Tonos neutros como blanco, negro y beige son ideales. Puedes añadir un toque de color vibrante.<br>
+      <strong>Diseño simple:</strong> Líneas rectas, figuras geométricas y espacios vacíos son la clave.<br>
+      <strong>Técnica:</strong> Usa pinceles planos y aplica pintura en capas uniformes.<br>
+      <strong>Acabado:</strong> Un marco sencillo realza el diseño minimalista.<br><br>
+      El minimalismo no es aburrido, es sofisticado. ¡Crea cuadros que transformen cualquier espacio!
+      ` },
+
+      { id: 3, titulo: "Cómo lograr degradados perfectos en tus diseños", 
+      video: "https://youtube.com/embed/moV35zCCKME?si=FQzysBSDMcAIMO4X", contenido: 
+      `Los degradados aportan profundidad y elegancia a cualquier creación. Aprende a hacerlos sin complicaciones.<br><br>
+      <strong>Materiales:</strong> Pinceles suaves y pinturas acrílicas.<br>
+      <strong>Técnica:</strong> Mezcla dos colores en la superficie, difuminando con movimientos circulares.<br>
+      <strong>Consejo:</strong> Trabaja rápido antes de que la pintura se seque.<br>
+      <strong>Sellado:</strong> Aplica barniz para proteger el efecto.<br><br>
+      Dominar los degradados hará que tus diseños luzcan profesionales. ¡Practica y sorprende con tus creaciones!
+      ` },
+
+      { id: 4, titulo: "Cómo limpiar tus totebags sin dañar la pintura", 
+      imagen: "img/totebagg.jpeg", contenido: 
+      `Uno de los mayores temores al tener una totebag personalizada es que la pintura se deteriore al lavarla. Pero no te preocupes, existen métodos seguros para mantenerla impecable.<br><br>
+      <strong>Evita lavadoras:</strong> El movimiento y la fricción pueden desgastar la pintura. Opta por lavado a mano.<br>
+      <strong>Usa agua fría y jabón suave:</strong> El agua caliente puede afectar la fijación del color.<br>
+      <strong>No frotes directamente sobre el diseño:</strong> Limpia alrededor y, si es necesario, pasa un paño húmedo sobre la pintura con cuidado.<br>
+      <strong>Secado al aire:</strong> Nunca uses secadora, ya que el calor excesivo puede dañar la pintura.<br><br>
+      Siguiendo estos consejos, tu totebag se mantendrá como nueva por mucho tiempo. ¡Cuida tu arte y disfruta de tus creaciones!
+      ` },
+
+      { id: 5, titulo: "Trucos para combinar colores en tus creaciones",
+      imagen: "img/combinarColores.jpeg", contenido: 
+      `La combinación de colores puede hacer que tu diseño destaque o pase desapercibido. Aquí te damos tips infalibles.<br><br>
+      <strong>Usa la regla del 60-30-10:</strong> 60% color principal, 30% secundario, 10% acento.<br>
+      <strong>Colores complementarios:</strong> Azul y naranja, rojo y verde, amarillo y morado.<br>
+      <strong>Prueba antes de pintar:</strong> Haz muestras en papel para evitar errores.<br><br>
+      Una buena combinación de colores transforma cualquier diseño. ¡Experimenta y encuentra tu estilo!
+      ` },
+
+      { id: 6, titulo: "Por qué el arte hecho a mano nunca pasa de moda", 
+      imagen: "img/Cat.jpeg", contenido: 
+      `En un mundo lleno de producción masiva, el arte hecho a mano sigue siendo un tesoro. ¿Por qué? Porque cada pieza cuenta una historia única y refleja la dedicación del creador.<br><br>
+      <strong>Valor emocional:</strong> Una pieza artesanal no es solo un objeto, es una experiencia.<br>
+      <strong>Exclusividad:</strong> Nadie más tendrá exactamente lo mismo que tú.<br>
+      <strong>Sostenibilidad:</strong> Comprar arte hecho a mano apoya a emprendedores y reduce el impacto ambiental.<br><br>
+      El arte manual no es solo una tendencia, es una forma de conectar con la autenticidad. ¡Cada creación es un pedacito de alma que merece ser valorado!
+      `},
+
+      { id: 7, titulo: "Tendencias en decoración con cuadros artesanales", 
+      imagen: "img/download (2).jpeg", contenido: 
+      `Los cuadros pintados a mano están ganando terreno en la decoración moderna. ¿Por qué? Te lo contamos.<br><br>
+      <strong>Estilo boho:</strong> Colores cálidos y diseños naturales.<br>
+      <strong>Minimalismo:</strong> Líneas simples y tonos neutros.<br>
+      <strong>Arte abstracto:</strong> Ideal para espacios contemporáneos.<br><br>
+      Un cuadro artesanal transforma cualquier ambiente. ¡Atrévete a decorar con arte único!
+      `}
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'));
+    const articulo = articulos.find(a => a.id === id);
+
+    if (articulo) {
+      document.querySelector('.titulo-articulo').textContent = articulo.titulo;
+      document.querySelector('.imagen-articulo').src = articulo.imagen;
+      document.querySelector('.texto-articulo p').innerHTML = articulo.contenido; /*textContent = articulo.contenido:*/
+
+      const videoContainer = document.querySelector('.video-articulo');
+      const imagenElemento = document.querySelector('.imagen-articulo');
+
+
+      if (articulo.video) {
+        videoContainer.innerHTML = `
+        <iframe
+          src="${articulo.video}" 
+          title="${articulo.titulo}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      `;
+        imagenElemento.style.display = "none"; // Oculta imagen
+      }
+
+    } else {
+      document.querySelector('.contenido-articulo').innerHTML = `<h2 style="color:#b35b2a;text-align:center;">Artículo no encontrado</h2>`;
+    }
+  </script>
+
+</body>
+
+</html>

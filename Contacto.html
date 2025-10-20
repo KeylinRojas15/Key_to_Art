@@ -1,30 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key to Art - Contacto</title>
-    <link rel="stylesheet" href="css/estilos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key to Art - Contacto</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Encabezado -->
+
+  <!-- Header -->
   <header class="header">
     <h1 class="logo">Key to Art</h1>
     <nav class="nav">
-      <a href="#inicio" class="link">Inicio</a>
-      <a href="#nosotros" class="link">Nosotros</a>
+      <a href="index.html" class="link">Inicio</a>
+      <a href="" class="link">Nosotros</a>
       <a href="Blog.html" class="link">Blogs</a>
-      <a href="#contacto" class="link active">Contacto</a>
-      <a href="#preguntas" class="link">Preguntas Frecuentes</a>
-      <a href="#acerca" class="link">Acerca de</a>
+      <a href="Contacto.html" class="link active">Contacto</a>
+      <a href="" class="link">Preguntas Frecuentes</a>
+      <a href="AcercaDe.html" class="link">Acerca de</a>
     </nav>
-  </header> 
+  </header>
 
-    <!-- Footer -->
+  <!-- Sección de contacto -->
+  <section class="seccion contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Si deseas más información o tienes alguna consulta, puedes comunicarte con nosotros a través de los siguientes medios o completar el formulario.</p>
+
+    <!-- Información -->
+    <div class="info-contacto">
+      <div class="card-contacto">
+        <h3>📞 Teléfono</h3>
+        <p>(+506) 8888-9999</p>
+      </div>
+      <div class="card-contacto">
+        <h3>📍 Dirección</h3>
+        <p>Alajuela, Grecia</p>
+      </div>
+      <div class="card-contacto">
+        <h3>🕒 Horarios</h3>
+        <p>Lunes a Viernes: 9:00 a.m. - 6:00 p.m.<br>Sábados: 9:00 a.m. - 1:00 p.m.</p>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <form class="form-contacto" onsubmit="mostrarMensaje(event)">
+      <h3>Formulario de Contacto</h3>
+      <div class="fila">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+      </div>
+      <div class="fila">
+        <input type="tel" name="telefono" placeholder="Teléfono" required>
+        <input type="date" name="fecha" required>
+      </div>
+      <div class="fila">
+        <select name="asunto" required>
+          <option value="">Seleccione un motivo</option>
+          <option value="consulta">Consulta general</option>
+          <option value="pedido">Información sobre pedidos</option>
+          <option value="colaboracion">Colaboraciones</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit" class="btn-enviar">Enviar mensaje</button>
+      <p id="mensaje-confirmacion" class="mensaje-confirmacion"></p>
+    </form>
+
+    <!-- Mapa -->
+    <div class="mapa">
+      <h3>Encuéntranos aquí</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15713.149842509634!2d-84.3134594!3d10.075515750000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa05856e7d0996d%3A0x6bccc3b8a9ecc98b!2sProvincia%20de%20Alajuela%2C%20Grecia!5e0!3m2!1ses-419!2scr!4v1760994239230!5m2!1ses-419!2scr" 
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="columna">
-      <p>m felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+      <p>Key to Art – Inspirando creatividad en cada detalle. Encuentra tus colores, ideas y técnicas favoritas aquí.</p>
     </div>
 
     <div class="columna centro">
@@ -37,10 +94,17 @@
     </div>
 
     <div class="columna">
-      <p>m felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+      <p>Gracias por visitar nuestro sitio. Esperamos poder ayudarte a dar vida a tus proyectos artísticos.</p>
     </div>
   </footer>
 
+  <script>
+    function mostrarMensaje(event) {
+      event.preventDefault();
+      document.getElementById("mensaje-confirmacion").textContent = "Tu mensaje ha sido enviado con éxito. ¡Gracias por contactarnos!";
+      event.target.reset();
+    }
+  </script>
 
 </body>
 </html>

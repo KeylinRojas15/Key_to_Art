@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Key to Art - Acerca De</title>
   <link rel="stylesheet" href="css/estilos.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
   <!-- Encabezado -->
@@ -26,7 +29,8 @@
   <section class="seccion acerca" id="acerca">
     <h2>Acerca de los Autores</h2>
     <p class="intro">
-      Conoce a las mentes creativas detrás de <strong>Key to Art</strong>. Aquí te compartimos un poco más sobre quiénes somos y qué nos inspira a crear.
+      Conoce a las mentes creativas detrás de <strong>Key to Art</strong>. Aquí te compartimos un poco más sobre quiénes
+      somos y qué nos inspira a crear.
     </p>
 
     <div class="autores">
@@ -37,7 +41,9 @@
         <p><strong>Correo:</strong> nyarayanorori@gmail.com</p>
         <p><strong>Carrera:</strong> Ingeniería del Software</p>
         <p class="info">
-          Me motiva colaborar en proyectos creativos que promuevan el talento local y el arte como medio de expresión. Ademas de colaborar con el desarrollo del sitio web de Key to Art, aportando creatividad y funcionalidad al espacio digital del emprendimiento.
+          Me motiva colaborar en proyectos creativos que promuevan el talento local y el arte como medio de expresión.
+          Ademas de colaborar con el desarrollo del sitio web de Key to Art, aportando creatividad y funcionalidad al
+          espacio digital del emprendimiento.
         </p>
       </div>
 
@@ -54,17 +60,25 @@
     </div>
   </section>
 
+  <!-- Botón para subir al inicio -->
+  <button id="scrollTopBtn" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="columna">
-      <p>Key to Art – Inspirando creatividad en cada detalle. Encuentra tus colores, ideas y técnicas favoritas aquí.</p>
+      <p>Key to Art – Inspirando creatividad en cada detalle. Encuentra tus colores, ideas y técnicas favoritas aquí.
+      </p>
     </div>
 
     <div class="columna centro">
       <h3>¡Contáctame!</h3>
       <div class="iconos">
-        <a href="https://wa.me/50664841775"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="WhatsApp"></a>
-        <a href="https://www.instagram.com/key_to_art_?igsh=ZDQzZjB0eGIyYmRx"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        <a href="https://wa.me/50664841775"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png"
+            alt="WhatsApp"></a>
+        <a href="https://www.instagram.com/key_to_art_?igsh=ZDQzZjB0eGIyYmRx"><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
         <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
       </div>
     </div>
@@ -74,5 +88,13 @@
     </div>
   </footer>
 
+  <script>
+    window.onscroll = () => {
+      const btn = document.getElementById("scrollTopBtn");
+      btn.style.display = (document.documentElement.scrollTop > 100) ? "block" : "none";
+    };
+    document.getElementById("scrollTopBtn").onclick = () =>
+      window.scrollTo({ top: 0, behavior: "smooth" });
+  </script>
 </body>
 </html>

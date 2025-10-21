@@ -6,6 +6,7 @@
   <title>Key to Art - Contacto</title>
   <link rel="stylesheet" href="css/estilos.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -78,6 +79,11 @@
     </div>
   </section>
 
+  <!-- Botón para subir al inicio -->
+  <button id="scrollTopBtn" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="columna">
@@ -104,6 +110,21 @@
       document.getElementById("mensaje-confirmacion").textContent = "Tu mensaje ha sido enviado con éxito. ¡Gracias por contactarnos!";
       event.target.reset();
     }
+
+    // Mostrar/ocultar el botón al hacer scroll
+    window.onscroll = function () {
+      const btn = document.getElementById("scrollTopBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "flex";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    // Subir suavemente al inicio
+    document.getElementById("scrollTopBtn").onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
   </script>
 
 </body>

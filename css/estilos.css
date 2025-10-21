@@ -706,7 +706,7 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   padding: 1.5rem;
-  width: 280px;
+  width: 290px;
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -748,7 +748,7 @@ textarea {
   }
 
   .card-autor {
-    width: 90%;
+    width: 80%;
   }
 }
 

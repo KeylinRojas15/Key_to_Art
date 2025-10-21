@@ -104,27 +104,14 @@
     </div>
   </footer>
 
+  <script src="js/script.js"></script>
+
   <script>
     function mostrarMensaje(event) {
       event.preventDefault();
       document.getElementById("mensaje-confirmacion").textContent = "Tu mensaje ha sido enviado con éxito. ¡Gracias por contactarnos!";
       event.target.reset();
     }
-
-    // Mostrar/ocultar el botón al hacer scroll
-    window.onscroll = function () {
-      const btn = document.getElementById("scrollTopBtn");
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        btn.style.display = "flex";
-      } else {
-        btn.style.display = "none";
-      }
-    };
-
-    // Subir suavemente al inicio
-    document.getElementById("scrollTopBtn").onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
   </script>
 
 </body>

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+<>
 
   <header class="header">
     <h1 class="logo"><a href="index.html">Key to Art</a></h1>
@@ -88,6 +88,7 @@
     </div>
   </footer>
 
+  <script src="js/script.js"></script>
   <script>
     const articulos = [
       {
@@ -173,7 +174,7 @@
     if (articulo) {
       document.querySelector('.titulo-articulo').textContent = articulo.titulo;
       document.querySelector('.imagen-articulo').src = articulo.imagen;
-      document.querySelector('.texto-articulo p').innerHTML = articulo.contenido; /*textContent = articulo.contenido:*/
+      document.querySelector('.texto-articulo p').innerHTML = articulo.contenido;
 
       const videoContainer = document.querySelector('.video-articulo');
       const imagenElemento = document.querySelector('.imagen-articulo');
@@ -195,22 +196,7 @@
     } else {
       document.querySelector('.contenido-articulo').innerHTML = `<h2 style="color:#b35b2a;text-align:center;">Artículo no encontrado</h2>`;
     }
-
-    // Mostrar/ocultar el botón al hacer scroll
-    window.onscroll = function () {
-      const btn = document.getElementById("scrollTopBtn");
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        btn.style.display = "flex";
-      } else {
-        btn.style.display = "none";
-      }
-    };
-
-    // Subir suavemente al inicio
-    document.getElementById("scrollTopBtn").onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+    
   </script>
-
 </body>
 </html>

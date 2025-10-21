@@ -149,7 +149,8 @@
    </div>
   </footer>
 
-  <!-- Script para scroll suave y activación de botón, boton para subir -->
+  <script src="js/script.js"></script>
+  <!-- Script para scroll suave y activación de botón -->
   <script>
     const botones = document.querySelectorAll('.filtros button');
 
@@ -167,24 +168,7 @@
         }
       });
     });
-
-        // Mostrar/ocultar el botón al hacer scroll
-    window.onscroll = function () {
-      const btn = document.getElementById("scrollTopBtn");
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        btn.style.display = "flex";
-      } else {
-        btn.style.display = "none";
-      }
-    };
-
-    // Subir suavemente al inicio
-    document.getElementById("scrollTopBtn").onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
   </script>
 
-
 </body>
-
 </html>

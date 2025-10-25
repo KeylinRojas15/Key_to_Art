@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Opcional: Cerrar el menú si se hace clic en un enlace (para mejor UX en móvil)
+        //Cerrar el menú si se hace clic en un enlace (para mejor UX en móvil)
         const navLinks = nav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {

@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
 //Menu Hamburguesa
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');

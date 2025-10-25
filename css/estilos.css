@@ -107,6 +107,51 @@ body {
   }
 }
 
+/* Botón hamburguesa */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b34b3c;
+  font-size: 2rem;
+  z-index: 20;
+}
+
+/* NAV responsivo */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+
+  /* Cuando se abre el menú */
+  .nav.open {
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav a {
+    display: block;
+    margin: 0.7rem 0;
+  }
+}
+
 /* FILTROS */
 .filtros {
   display: flex;

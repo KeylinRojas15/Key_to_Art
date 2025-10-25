@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/estilos.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +16,13 @@
   <!-- Encabezado -->
   <header class="header">
     <h1 class="logo"><a href="index.html">Key to Art</a></h1>
-    <nav class="nav">
+    
+     <!-- Botón del menú hamburguesa-->
+    <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span class="material-icons">menu</span>
+    </button>
+    
+    <nav class="nav" id="main-nav">
       <a href="index.html" class="link">Inicio</a>
       <a href="" class="link">Nosotros</a>
       <a href="Blog.html" class="link">Blogs</a>

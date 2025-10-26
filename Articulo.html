@@ -23,10 +23,10 @@
     <nav class="nav" id="main-nav">
       <a href="index.html" class="link">Inicio</a>
       <a href="nosotros.html" class="link">Nosotros</a>
-      <a href="#blogs" class="link active">Blogs</a>
-      <a href="Contacto.html" class="link">Contacto</a>
+      <a href="blog.html" class="link active">Blogs</a>
+      <a href="contacto.html" class="link">Contacto</a>
       <a href="preguntas.html" class="link">Preguntas Frecuentes</a>
-      <a href="AcercaDe.html" class="link">Acerca de</a>
+      <a href="acercade.html" class="link">Acerca de</a>
     </nav>
   </header>
 
@@ -55,13 +55,14 @@
 
     <section class="deja-comentario">
       <h3>Deja un comentario</h3>
-      <form class="form-comentario">
+      <form class="form-comentario" onsubmit="mostrarMensaje(event)">
         <div class="fila">
           <input type="text" placeholder="Nombre" required>
           <input type="email" placeholder="Correo electrónico" required>
         </div>
         <textarea placeholder="Comentario" required></textarea>
         <button type="submit" class="btn-enviar">Enviar</button>
+        <p id="mensaje-confirmacion" class="mensaje-confirmacion"></p>
       </form>
     </section>
   </main>
@@ -202,6 +203,11 @@
       document.querySelector('.contenido-articulo').innerHTML = `<h2 style="color:#b35b2a;text-align:center;">Artículo no encontrado</h2>`;
     }
     
+     function mostrarMensaje(event) {
+      event.preventDefault();
+      document.getElementById("mensaje-confirmacion").textContent = "Tu comentario ha sido enviado con éxito. ¡Gracias por tu reseña!";
+      event.target.reset();
+    }
   </script>
 </body>
 </html>

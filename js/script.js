@@ -5,8 +5,32 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!carrusel) return; // Nada que hacer si no hay carrusel
 
     const slides = Array.from(carrusel.querySelectorAll('.slide'));
-    let indiceActual = slides.findIndex(s => s.classList.contains('activo'));
-    if (indiceActual === -1) indiceActual = 0;
+    if (slides.length === 0) return;
+
+    // helper: key to identify logical slide (prefer image src)
+    const keyOf = s => {
+        const img = s.querySelector('img');
+        if (img && img.src) return img.src;
+        return s.textContent.trim();
+    };
+
+    // Build list of unique logical slides (by image src or content)
+    const uniqueKeys = [];
+    const keySeen = new Set();
+    slides.forEach(s => {
+        const k = keyOf(s);
+        if (!keySeen.has(k)) {
+            keySeen.add(k);
+            uniqueKeys.push(k);
+        }
+    });
+
+    const logicalCount = uniqueKeys.length;
+
+    // find initial active slide (physical index) and logical index
+    let physicalIndex = slides.findIndex(s => s.classList.contains('activo'));
+    if (physicalIndex === -1) physicalIndex = 0;
+    let logicalIndex = Math.max(0, uniqueKeys.indexOf(keyOf(slides[physicalIndex])));
 
     // Crear contenedor de dots si no existe
     let dotsContainer = carrusel.querySelector('.carrusel-dots');
@@ -16,45 +40,47 @@ document.addEventListener('DOMContentLoaded', function () {
         carrusel.appendChild(dotsContainer);
     }
 
-    // Asegurar que solo se generen 3 dots para las diapositivas originales
-    const slidesOriginales = Array.from(carrusel.querySelectorAll('.slide'));
-    const maxDots = 3; // Limitar a 3 dots
-
-    // Limitar la generación de dots a las primeras 3 diapositivas
-    slidesOriginales.slice(0, maxDots).forEach((_, idx) => {
+    // Generar los dots según logicalCount
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < logicalCount; i++) {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.addEventListener('click', () => mostrarSlide(idx));
+        btn.addEventListener('click', () => mostrarSlideLogical(i));
         dotsContainer.appendChild(btn);
-    });
-
-    const dots = Array.from(dotsContainer.children); // Actualizar referencia a los dots
+    }
+    const dots = Array.from(dotsContainer.children);
 
     function actualizarClases() {
-        slides.forEach((s, i) => s.classList.toggle('activo', i === indiceActual));
-        dots.forEach((d, i) => d.classList.toggle('active', i === indiceActual));
+        // marcar la slide física activa
+        slides.forEach((s, i) => s.classList.toggle('activo', i === physicalIndex));
+        // marcar el dot lógico activo
+        dots.forEach((d, i) => d.classList.toggle('active', i === logicalIndex));
     }
 
-    // Mostrar la slide en el índice dado
-    function mostrarSlide(n) {
-        if (n < 0) n = slides.length - 1;
-        if (n >= slides.length) n = 0;
-        indiceActual = n;
+    function mostrarSlideLogical(n) {
+        // wrap
+        if (n < 0) n = logicalCount - 1;
+        if (n >= logicalCount) n = 0;
+        logicalIndex = n;
+        // find physical slide matching logical key (first occurrence)
+        const key = uniqueKeys[logicalIndex];
+        const target = slides.findIndex(s => keyOf(s) === key);
+        if (target !== -1) physicalIndex = target;
         actualizarClases();
     }
 
-    // Función expuesta para los botones prev/next en el HTML
+    // expose cambiarSlide to move logical index by delta
     window.cambiarSlide = function (delta) {
-        mostrarSlide(indiceActual + delta);
+        mostrarSlideLogical(logicalIndex + delta);
     };
 
-    // Autoplay (opcional) — 5 segundos por slide
-    let autoplayInterval = 5000;
+    // Autoplay (opcional)
+    let autoplayInterval = 2000;
     let autoplayId = null;
 
     function startAutoplay() {
         if (autoplayId) return;
-        autoplayId = setInterval(() => mostrarSlide(indiceActual + 1), autoplayInterval);
+        autoplayId = setInterval(() => mostrarSlideLogical(logicalIndex + 1), autoplayInterval);
     }
 
     function stopAutoplay() {
@@ -63,11 +89,10 @@ document.addEventListener('DOMContentLoaded', function () {
         autoplayId = null;
     }
 
-    // Iniciar con la slide correcta y autoplay
+    // iniciar
     actualizarClases();
     startAutoplay();
 
-    // Pausar autoplay al poner el cursor sobre el carrusel
     carrusel.addEventListener('mouseenter', stopAutoplay);
     carrusel.addEventListener('mouseleave', startAutoplay);
 });
@@ -199,3 +224,5 @@ document.addEventListener('DOMContentLoaded', function () {
         autoplayId = setInterval(() => moveOne(1), 3500);
     });
 });
+
+

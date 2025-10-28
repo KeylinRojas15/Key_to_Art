@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key to Art - Inicio</title>
+    <link rel="stylesheet" href="css/inicio.css" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="img/jirafa.png" type="image/png">
+
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <h1 class="logo"><a href="index.html">Key to Art</a></h1>
+
+        <!-- Botón del menú hamburguesa-->
+        <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span class="material-icons">menu</span>
+        </button>
+
+        <nav class="nav" id="main-nav">
+            <a href="index.html" class="link active">Inicio</a>
+            <a href="nosotros.html" class="link">Nosotros</a>
+            <a href="blog.html" class="link ">Blogs</a>
+            <a href="contacto.html" class="link">Contacto</a>
+            <a href="preguntasfrecuentes.html" class="link">Preguntas Frecuentes</a>
+            <a href="acercaDe.html" class="link">Acerca de</a>
+        </nav>
+    </header>
+
+    <!-- Sección Carrusel -->
+    <section id="carrusel" class="seccion">
+        <div class="carrusel">
+            <div class="slide activo"> <img src="img/inicio/carrusel1/carrusel1.jpg" alt="Imagen 1"> </div>
+            <div class="slide"> <img src="img/inicio/carrusel1/carrusel2.jpg" alt="Imagen 2"> </div>
+            <div class="slide"> <img src="img/inicio/carrusel1/carrusel3.jpg" alt="Imagen 3"> </div> <button
+                class="prev" onclick="cambiarSlide(-1)">&#10094;</button> <button class="next"
+                onclick="cambiarSlide(1)">&#10095;</button>
+        </div>
+        <script src="js/script.js"></script>
+    </section>
+
+
+    <!-- Sección Disponibles -->
+    <section id="disponibles" class="seccion">
+        <img class="disponible" src="../img/inicio/disponibles/Disponibles.png" alt="disponibles">
+        <div class="articulos">
+
+            <!-- Cuadro 1 -->
+            <article class="automovil">
+                <img src="../img/inicio/disponibles/carro.jpeg" alt="Carro pintado a mano">
+                <div class="contenido">
+                    <h3>Auto móviles</h3>
+                    <small>60x60 cm</small>
+                </div>
+            </article>
+
+            <!-- Cuadro 2 -->
+            <article class="perros">
+                <img src="../img/inicio/disponibles/perros.jpeg" alt="Perros pintados a mano">
+                <div class="contenido">
+                    <h3>Mascotas</h3>
+                    <small>8x8 cm</small>
+                </div>
+            </article>
+
+            <!-- Cuadro 3 -->
+            <article class="retrato">
+                <img src="../img/inicio/disponibles/retrato.jpeg" alt="Retrato pintado a mano">
+                <div class="contenido">
+                    <h3>Retrato</h3>
+                    <small>30x40 cm</small>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Categorias de Productos -->
+    <section id="categorias" class="seccion">
+        <div class="categoria">
+
+            <!-- Cuadros -->
+            <article class="cuadro">
+                <h1>Cuadros</h1>
+                <img src="../img/inicio/categorias/chito.png" alt="Cuadro">
+                <div class="contenido">
+                    <p>Un cuadro es una obra artística pintada o dibujada sobre una superficie</p>
+                    <div>
+                        <a href="https://www.canva.com/design/DAF5K1RJAfs/rsOfKZiPVOV4SaLcLG0ENQ/edit?utm_content=DAF5K1RJAfs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                            target="_blank" rel="noopener noreferrer">
+                            <h3>Ver más</h3>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tote Bags -->
+            <article class="toteBags">
+                <h1>Tote Bags</h1>
+                <img src="../img/inicio/categorias/Tote bag.jpg" alt="Tote Bag">
+                <div class="contenido">
+                    <p>Bolsa de tela ligera, resistente y reutilizable con un diseño personalizado</p>
+                    <div>
+                        <a href="https://www.canva.com/design/DAF5K1RJAfs/rsOfKZiPVOV4SaLcLG0ENQ/edit?utm_content=DAF5K1RJAfs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                            target="_blank" rel="noopener noreferrer">
+                            <h3>Ver más</h3>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Estuches -->
+            <article class="estuches">
+                <h1>Estuches</h1>
+                <img src="../img/inicio/categorias/estuche.jpg" alt="Estuches">
+                <div class="contenido">
+                    <p>Estuches de celular con diseño unicos, proximamente a la venta</p>
+                    <div>
+                        <a href="https://www.canva.com/design/DAF5K1RJAfs/rsOfKZiPVOV4SaLcLG0ENQ/edit?utm_content=DAF5K1RJAfs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                            target="_blank" rel="noopener noreferrer">
+                            <h3>Ver más</h3>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Galería circular -->
+    <section id="carruselcircular" class="seccion">
+        <div class="circulos-grid">
+            <div class="circulo">
+                <img src="img/inicio/carrusel2/luffy.jpg" alt="Anime">
+                <div class="descripcion">ANIME</div>
+            </div>
+
+            <div class="circulo">
+                <img src="img/inicio/carrusel2/fio-retrato.jpeg" alt="Retratos">
+                <div class="descripcion">RETRATOS</div>
+            </div>
+
+            <div class="circulo">
+                <img src="img/inicio/disponibles/perros.jpeg" alt="Mascotas">
+                <div class="descripcion">MASCOTAS</div>
+            </div>
+
+            <div class="circulo">
+                <img src="img/inicio/carrusel2/infantil.jpeg" alt="Infantil">
+                <div class="descripcion">INFANTIL</div>
+            </div>
+
+            <div class="circulo">
+                <img src="img/inicio/carrusel2/flores.jpeg" alt="Flores">
+                <div class="descripcion">FLORES</div>
+            </div>
+
+            <div class="circulo">
+                <img src="img/inicio/carrusel2/musica.jpeg" alt="Musica">
+                <div class="descripcion">MUSICA</div>
+            </div>
+
+            <div class="circulo">
+                <img src="img/inicio/carrusel2/famosos.jpeg" alt="Famosos">
+                <div class="descripcion">FAMOSOS</div>
+            </div>
+
+            <div class="circulo">
+                <img src="img/inicio/carrusel2/videojuegos.jpg" alt="Videojuegos">
+                <div class="descripcion">VIDEOJUEGOS</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mision-vision-section" aria-labelledby="mv-title">
+
+        <!-- Checkbox oculto que controla el estado (unchecked = Misión, checked = Visión) -->
+        <input id="interruptor" class="interruptor-mover" type="checkbox" aria-label="Cambiar entre Misión y Visión">
+
+        <!-- Label actúa como el "interruptor" visual -->
+        <label for="interruptor" class="switch" role="presentation">
+            <div class="boton" aria-hidden="true"></div>
+
+            <div class="opcion mision">
+                <h3 class="title">MISIÓN</h3>
+                <p class="texto">
+                    Inspirar emociones y embellecer espacios a través del arte único y hecho a mano
+                </p>
+            </div>
+
+            <div class="opcion vision">
+                <h3 class="title">VISIÓN</h3>
+                <p class="texto">
+                    Crear cuadros artísticos originales que reflejen creatividad y pasión, acercando el arte a cada
+                    hogar
+                </p>
+            </div>
+        </label>
+    </section>
+
+    <!-- Botón para subir al inicio -->
+    <button id="scrollTopBtn" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="columna">
+            <p>Key to Art – Inspirando creatividad en cada detalle. Encuentra tus colores, ideas y técnicas favoritas
+                aquí.</p>
+        </div>
+
+        <div class="columna centro">
+            <h3>¡Contáctame!</h3>
+            <div class="iconos">
+                <a href="https://wa.me/50664841775"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png"
+                        alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/key_to_art_?igsh=ZDQzZjB0eGIyYmRx"><img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            </div>
+        </div>
+
+        <div class="columna">
+            <p>Gracias por visitar nuestro sitio. Esperamos poder ayudarte a dar vida a tus proyectos artísticos.</p>
+        </div>
+    </footer>
+
+    <script src="js/carrusel.js"></script>
+    <!-- Script para scroll suave y activación de botón -->
+    <script>
+        const botones = document.querySelectorAll('.filtros button');
+
+        botones.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Quita la clase activo de todos
+                botones.forEach(b => b.classList.remove('activo'));
+                // Agrega la clase activo al botón clicado
+                btn.classList.add('activo');
+
+                // Scroll suave a la sección correspondiente
+                const section = document.getElementById(btn.dataset.section);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

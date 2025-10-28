@@ -48,7 +48,7 @@
     }
 }
 
-/* Botones prev/next */
+
 .carrusel .prev,
 .carrusel .next {
     position: absolute;
@@ -82,7 +82,7 @@
     right: 12px;
 }
 
-/* Indicadores (dots) */
+
 .carrusel-dots {
     position: absolute;
     bottom: 12px;
@@ -109,13 +109,11 @@
     transform: scale(1.25);
 }
 
-/*Esapcios entre Carrusel y secciones*/
+
 #carrusel.seccion {
     padding-bottom: 0.5rem;
-    /* antes estaba 1rem o más */
 }
 
-/* RESPONSIVE CARRUSEL */
 @media (max-width: 1024px) {
     .carrusel .slide {
         height: 360px;
@@ -141,11 +139,9 @@
 
 
 
-/* Ajustes para el carrusel en pantallas pequeñas */
 @media (max-width: 768px) {
     #carrusel .slide img {
         object-fit: contain;
-        /* Evita que las imágenes se corten */
         width: 100%;
         height: auto;
 
@@ -157,36 +153,24 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;
-        /* Asegura que los botones estén por encima de las imágenes */
     }
 }
-
-/* Disponibles */
-.seccion {
-    padding: 1rem 1rem;
-    padding-top: 1rem;
-}
-
 
 .seccion .disponible {
     width: 200px;
     margin: 30px;
 }
 
-/* Centrar la imagen de la sección disponibles */
 #disponibles .disponible {
     display: block;
     margin: 0 auto;
     max-width: 100%;
 }
 
-/* Más espacio entre la imagen disponible y los demás elementos */
 #disponibles .disponible {
     margin-bottom: 2rem;
-    /* Incrementado para más espacio */
 }
 
-/* Grid de artículos */
 .articulos {
     display: flex;
     justify-content: center;
@@ -196,7 +180,6 @@
     margin: 0 auto;
 }
 
-/* Tarjetas individuales */
 .articulos article {
     border-radius: 10px;
     overflow: hidden;
@@ -210,16 +193,13 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Imagen */
 .articulos img {
     width: 100%;
     border: 10px solid #f6d687;
-    /* marco color miel */
     border-radius: 10px;
     height: 250px;
     object-fit: cover;
     object-position: center;
-    /* centrar el contenido de la imagen dentro del recorte */
     display: block;
     margin: 0 auto;
     box-sizing: border-box;
@@ -227,7 +207,6 @@
     border-radius: 8px;
 }
 
-/* Contenido */
 .articulos .contenido {
     padding: 1rem;
 }
@@ -245,7 +224,7 @@
     font-weight: 500;
 }
 
-/* Categorias de Productos */
+
 
 #categorias {
     padding: 3rem 1rem;
@@ -259,7 +238,6 @@
     gap: 28px;
 }
 
-/* Cada artículo (Cuadro, ToteBag, Estuche) */
 #categorias article {
 
     padding: 28px;
@@ -275,7 +253,6 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
-/* Imagen */
 #categorias article img {
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -284,7 +261,6 @@
     margin-bottom: 20px;
 }
 
-/* Título principal de cada tarjeta */
 #categorias article h1 {
     font-size: 2.7rem;
     color: #8A4F23;
@@ -294,7 +270,7 @@
     margin-top: 0;
 }
 
-/* Descripción */
+
 #categorias article p {
     font-size: 1.05rem;
     color: #8A4F23;
@@ -357,20 +333,31 @@
 
 #carruselcircular {
     margin-bottom: 48px;
-    /* espacio adicional debajo del carrusel circular */
+
 }
 
 .circulos {
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
 }
 
 .circulosmoviles {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 24px;
     align-items: center;
-    transition: transform 0.45s ease;
-    will-change: transform;
+    justify-content: center;
+    transition: none;
+    will-change: auto;
+}
+
+.circulos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .circulo {
@@ -380,7 +367,6 @@
     gap: 10px;
     flex: 0 0 auto;
     width: 180px;
-    /* ancho del bloque (imagen + label) */
 }
 
 .circulo img {
@@ -438,29 +424,12 @@
 }
 
 
-:root {
-    --radius: 18px;
-    --height: 160px;
-    --gap: 10px;
-
-    --gold-start: #f8d88f;
-    --gold-end: #e6bf69;
-
-    --brown-start: #7a3f1d;
-    --brown-end: #9a5629;
-
-    --text-white: #fff;
-    --shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-    --transition: 300ms cubic-bezier(.2, .9, .2, 1);
-}
-
-/* Reset básico (solo box-sizing para todo) */
 * {
     box-sizing: border-box;
 }
 
-/* Sección contenedora */
-.mission-vision-section {
+
+.mision-vision-section {
     width: min(900px, 96vw);
     margin: 0 auto;
     display: flex;
@@ -468,10 +437,9 @@
     gap: 16px;
     align-items: stretch;
     margin-bottom: 48px;
-    /* Add spacing between mission-vision section and footer */
 }
 
-/* Título de la sección (opcional visual) */
+
 .section-title {
     font-family: "Fredoka One", sans-serif;
     margin: 0;
@@ -480,50 +448,50 @@
     font-size: 20px;
 }
 
-/* Ocultar el checkbox real */
-.toggle-input {
+
+.interruptor-mover {
     position: absolute;
     left: -9999px;
 }
 
-/* Contenedor principal del "interruptor" (ahora acotado a la sección) */
-.mv-switch {
+
+.switch {
     --w: 860px;
     width: min(var(--w), 100%);
-    height: var(--height);
+    height: 160px; 
     display: flex;
     position: relative;
-    border-radius: var(--radius);
+    border-radius: 18px; 
     overflow: hidden;
     align-items: stretch;
-    box-shadow: var(--shadow);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
     cursor: pointer;
     user-select: none;
-    background: linear-gradient(90deg, var(--brown-start), var(--brown-end));
-    transition: box-shadow var(--transition);
+    background: linear-gradient(180deg, #F2D27B 0%, #8A4F23 100%);
+    transition: box-shadow 300ms cubic-bezier(.2, .9, .2, 1);
 }
 
-/* El "knob" dorado que se desliza (ocupa la mitad del ancho) */
-.knob {
+
+.boton {
     position: absolute;
     left: 0;
     top: 0;
     width: 50%;
     height: 100%;
     z-index: 1;
-    background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+    background: linear-gradient(180deg, #8A4F23 0%, #F2D27B 100%);;
     box-shadow: inset 0 -6px 14px rgba(0, 0, 0, 0.08);
-    transition: transform var(--transition);
+    transition: transform 300ms cubic-bezier(.2, .9, .2, 1); 
     transform: translateX(0%);
 }
 
-/* Focus visible para accesibilidad */
-.toggle-input:focus+.mv-switch {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18), 0 0 0 4px rgba(210, 160, 50, 0.12);
+
+.interruptor-mover:focus+.switch {
+   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18), 0 0 0 4px rgba(210, 160, 50, 0.12);
 }
 
-/* Cada opción ocupa la mitad y su contenido está encima del knob (z-index mayor) */
-.option {
+
+.opcion {
     flex: 1 1 50%;
     padding: 20px 28px;
     display: flex;
@@ -532,12 +500,11 @@
     align-items: center;
     text-align: center;
     z-index: 2;
-    color: var(--text-white);
-    transition: color var(--transition), background var(--transition);
+    color: #fff;
+    transition: color 300ms cubic-bezier(.2, .9, .2, 1), background 300ms cubic-bezier(.2, .9, .2, 1); /* previously --transition */
     min-width: 0;
 }
 
-/* Títulos y texto */
 .title {
     font-family: "Fredoka One", "Inter", sans-serif;
     margin: 0 0 8px 0;
@@ -546,47 +513,46 @@
     text-transform: uppercase;
 }
 
-.text {
+.texto {
     margin: 0;
     font-size: 16px;
     line-height: 1.45;
     max-width: 360px;
 }
 
-/* Estados por defecto (unchecked) = Misión activa (lado izquierdo dorado) */
-.option.mission {
+
+.opcion.mision {
     background: none;
-    /* la "knob" aporta el fondo dorado */
+
 }
 
-.option.vision {
-    background: linear-gradient(90deg, var(--brown-start), var(--brown-end));
+.opcion.vision {
+    background: linear-gradient(90deg, #7a3f1d, #9a5629);
 }
 
-/* Cuando el toggle está CHECKED => Visión activa (lado derecho dorado) */
-.toggle-input:checked+.mv-switch .knob {
+
+.interruptor-mover:checked+.switch .boton {
     transform: translateX(100%);
 }
 
-.toggle-input:checked+.mv-switch .mission {
-    background: linear-gradient(90deg, var(--brown-start), var(--brown-end));
+    .interruptor-mover:checked+.switch .mision {
+    background: linear-gradient(90deg, #7a3f1d, #9a5629);
 }
 
-.toggle-input:checked+.mv-switch .vision {
+.interruptor-mover:checked+.switch .vision {
     background: none;
-    /* el knob cubrirá y mostrará el dorado */
+
 }
 
-/* Responsive: en pantallas muy pequeñas apilar verticalmente */
 @media (max-width:520px) {
-    .mv-switch {
+    .switch {
         flex-direction: column;
         height: auto;
         padding: 8px;
         border-radius: 14px;
     }
 
-    .knob {
+    .boton {
         position: absolute;
         width: 100%;
         height: 50%;
@@ -595,47 +561,13 @@
         transform: translateY(0%);
     }
 
-    /* mover el knob hacia abajo cuando está checked (mostrar visión en dorado debajo) */
-    .toggle-input:checked+.mv-switch .knob {
+
+    .interruptor-mover:checked+.switch .boton {
         transform: translateY(100%);
     }
 
-    .option {
+    .opcion {
         padding: 18px;
     }
 
-    :root {
-        --height: 240px;
-    }
-}
-
-/* FOOTER */
-.footer {
-    background-color: #f6d687;
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem 1rem;
-    flex-wrap: wrap;
-    text-align: center;
-    animation: fadeInUp 1s ease;
-}
-
-.footer .columna {
-    flex: 1 1 300px;
-    padding: 1rem;
-}
-
-.footer .centro h3 {
-    margin-bottom: 1rem;
-}
-
-.iconos a img {
-    width: 35px;
-    margin: 0 10px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.iconos a img:hover {
-    transform: scale(1.2);
-    filter: brightness(1.2);
 }

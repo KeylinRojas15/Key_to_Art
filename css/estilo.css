@@ -138,7 +138,6 @@ body {
         transition: all 0.4s ease;
     }
 
-    /* Cuando se abre el menú */
     .nav.open {
         max-height: 400px;
         opacity: 1;
@@ -186,8 +185,6 @@ body {
     margin: 2rem auto;
     max-width: 1100px;
     padding: 0 1rem;
-    text-align: center;
-    /* centrar títulos h2 dentro de la sección */
 }
 
 .secciones h2 {
@@ -270,7 +267,6 @@ body {
 }
 
 
-/* Ajustes responsive: apilar en una columna en pantallas pequeñas */
 @media (max-width: 900px) {
     #sobrenosotros.secciones {
         grid-template-columns: repeat(2, 1fr);
@@ -284,7 +280,6 @@ body {
 
     #sobrenosotros article::after {
         display: none;
-        /* quitar el adorno en pantallas pequeñas para limpieza */
     }
 }
 
@@ -338,7 +333,6 @@ body {
     font-size: 1.15rem;
 }
 
-/* Pequeño decorado debajo del título */
 #valores article h3::after {
     content: '';
     display: block;
@@ -385,8 +379,6 @@ body {
     font-family: 'Pacifico', cursive !important;
 }
 
-
-/* Contenedor general de los artículos */
 .productos-servicios {
     display: flex;
     justify-content: center;
@@ -395,9 +387,7 @@ body {
     gap: 80px;
 }
 
-/* Estilo general para cada artículo (cuadro, totebag, etc.) */
 .productos-servicios article {
-    /* Por defecto apilamos: título arriba, imagen en medio, textos abajo/compactos */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -407,14 +397,12 @@ body {
     padding: 12px;
 }
 
-/* Imagen central (cuadro o producto) */
 .productos-servicios article img {
     width: 180px;
     height: auto;
     margin-block: 30px;
 }
 
-/* Título superior (por ejemplo "Cuadros") - siempre centrado arriba de la imagen */
 .productos-servicios article>div:nth-child(2) h3 {
     font-size: 1.2rem;
     color: #5a3d1a;
@@ -427,7 +415,6 @@ body {
     margin-top: 30px;
 }
 
-/* Contenedores de texto (Ventajas / Características) */
 .contenidoo {
     background-color: #fdf3e7;
     border: 2px solid #b78c5c;
@@ -438,7 +425,6 @@ body {
     position: relative;
 }
 
-/* “Cuerda” o hilo de colgante */
 .contenidoo::before {
     content: "";
     position: absolute;
@@ -462,12 +448,11 @@ body {
     color: #333;
 }
 
-/* Diseño específico de los cuadros (imagen en el centro) */
+
 .cuadro {
     flex-direction: row;
 }
 
-/* Si deseas los hilos diagonales como en la imagen */
 .contenidoo::after {
     content: "";
     position: absolute;
@@ -480,7 +465,6 @@ body {
     transform: translateX(-50%);
 }
 
-/* Variaciones: ventajas -> cuerda abajo; caracteristicas -> cuerda arriba */
 .contenidoo.ventajas::before {
     top: auto;
     bottom: -25px;
@@ -492,7 +476,6 @@ body {
 }
 
 .contenidoo.caracteristicas::before {
-    /* asegura que la cuerda quede arriba (por si se sobreescribió) */
     top: -25px;
     bottom: auto;
 }
@@ -502,7 +485,6 @@ body {
     bottom: auto;
 }
 
-/* FOOTER */
 .footer {
     background-color: #f6d687;
     display: flex;
@@ -562,13 +544,13 @@ body {
     background-color: #fff;
 }
 
-/* VIDEOS: galería responsiva en nosotros.html */
+
 .videos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1rem;
     align-items: start;
-    justify-items: center; /* centra el contenido de cada celda */
+    justify-items: center;
 }
 
 .videos-grid video {
@@ -580,10 +562,9 @@ body {
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     outline: none;
     display: block;
-    margin: 0 auto; /* asegura centrado si la celda es más ancha */
+    margin: 0 auto;
 }
 
-/* Hacer los controles más visibles en móviles */
 @media (max-width: 480px) {
     .videos-grid video {
         max-height: 260px;
@@ -591,7 +572,6 @@ body {
     }
 }
 
-/* Pequeño ajuste del título para la sección videos */
 #videos h2 {
     margin-bottom: 1rem;
 }
@@ -657,7 +637,6 @@ body {
     line-height: 1.6;
 }
 
-/* Ajustes para pantallas pequeñas: apilar y quitar offset del texto */
 @media (max-width: 640px) {
     #preguntas .pregunta {
         grid-template-columns: 1fr;
@@ -674,8 +653,55 @@ body {
     }
 }
 
-/* Pequeño refinamiento visual para accesibilidad */
 #preguntas .pregunta-card:focus-within {
     outline: 3px solid rgba(160,216,160,0.18);
+}
+
+@media (max-width: 480px) {
+
+    #preguntas {
+        padding: 28px 0 36px;
+    }
+
+    #preguntas .contenedor {
+        padding: 0 0.75rem;
+    }
+
+    #preguntas .pregunta {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    #preguntas .pregunta-card {
+        padding: 0.9rem 0.9rem;
+    }
+
+    #preguntas .pregunta-numero {
+        position: static;
+        display: inline-block;
+        margin: 0 0.6rem 0.45rem 0;
+        padding: 6px 9px;
+        font-size: 0.85rem;
+        border-radius: 999px;
+        box-shadow: none;
+        vertical-align: middle;
+        transform: none;
+    }
+
+    #preguntas .pregunta-card h3 {
+        margin: 0 0 0.45rem 0;
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    #preguntas .pregunta-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    #preguntas .pregunta-card {
+        box-shadow: 0 6px 14px rgba(138, 79, 35, 0.05);
+    }
 }
 
